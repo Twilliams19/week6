@@ -1,0 +1,191 @@
+mysql> show columns from students
+    -> ;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| firstname     | varchar(20)  | YES  |     | NULL    |       |
+| middleinitial | varchar(3)   | YES  |     | NULL    |       |
+| lastname      | varchar(35)  | YES  |     | NULL    |       |
+| suffix        | varchar(3)   | YES  |     | NULL    |       |
+| officeid      | varchar(10)  | YES  |     | NULL    |       |
+| userid        | varchar(15)  | YES  |     | NULL    |       |
+| username      | varchar(8)   | YES  |     | NULL    |       |
+| email         | varchar(35)  | YES  |     | NULL    |       |
+| phone         | varchar(25)  | YES  |     | NULL    |       |
+| groups        | varchar(15)  | YES  |     | NULL    |       |
+| datestamp     | date         | YES  |     | NULL    |       |
+| Timestamp     | time         | YES  |     | NULL    |       |
+| pgpemail      | varchar(255) | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+13 rows in set (0.03 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, datestamp, timestamp) VALUES ('Desmond', 'K', 'Smith', 'Mr', CURDATE(), NOW());
+Query OK, 1 row affected (0.02 sec)
+
+mysql> SELECT * FROM students
+    -> ;
++-----------+---------------+----------+--------+----------+--------+----------+-------+-------+--------+------------+-----------+----------+
+| firstname | middleinitial | lastname | suffix | officeid | userid | username | email | phone | groups | datestamp  | Timestamp | pgpemail |
++-----------+---------------+----------+--------+----------+--------+----------+-------+-------+--------+------------+-----------+----------+
+| Desmond   | K             | Smith    | Mr     | NULL     | NULL   | NULL     | NULL  | NULL  | NULL   | 2019-07-15 | 13:07:46  | NULL     |
++-----------+---------------+----------+--------+----------+--------+----------+-------+-------+--------+------------+-----------+----------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, officeid, userid, username, email, phone, group, datestamp, Timestamp, pgemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skill', 'flo12mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, officeid, userid, username, email, phone, group, datestamp, Timestamp, pgemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skill', 'flo12', 'ephil', 'goat3@bellsouth,net', '404-XXX-XXXX', 'NEW', CURDATE(), NOW(), 'gull12@gmail.com'); 
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group, datestamp, Timestamp, pgemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skill' at line 1
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, officeid, userid, username, email, phone, group, datestamp, timestamp, pgemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skill', 'flo12', 'ephil', 'goat3@bellsouth,net', '404-XXX-XXXX', 'NEW', CURDATE(), NOW(), 'gull12@gmail.com');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group, datestamp, timestamp, pgemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skill' at line 1
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, officeid, userid, username, email, phone, group, datestamp, timestamp, pgpemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skill', 'flo12', 'ephil', 'goat3@bellsouth.net', '404-XXX-XXX', 'NEW', CURDATE(), NOW(), 'gull12@gmail.com');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group, datestamp, timestamp, pgpemail) VALUES ('Jill', 'V', 'Karen', 'Ms', 'skil' at line 1
+mysql> drop table students;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE students (firstname VARCHAR(20), middleinitial VARCHAR(3), lastname VARCHAR(35), suffix VARCHAR(3), phone VARCHAR(25), datestamp DATE, timestamp time);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show columns from students
+    -> ;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| firstname     | varchar(20) | YES  |     | NULL    |       |
+| middleinitial | varchar(3)  | YES  |     | NULL    |       |
+| lastname      | varchar(35) | YES  |     | NULL    |       |
+| suffix        | varchar(3)  | YES  |     | NULL    |       |
+| phone         | varchar(25) | YES  |     | NULL    |       |
+| datestamp     | date        | YES  |     | NULL    |       |
+| timestamp     | time        | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Desmond', 'K', 'Smith', 'Mr', '404-XXX-XXXX', CURDATE(), NOW());
+Query OK, 1 row affected (0.00 sec)
+
+mysql> (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Lisa', 'V', 'Cooper', 'Ms', '404-XXX-XXXX', CURDATE(), NOW());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ' at line 1
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Lisa', 'V', 'Cooper', 'Ms', '404-XXX-XXXX', CURDATE(), NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM students
+    -> ;
++-----------+---------------+----------+--------+--------------+------------+-----------+
+| firstname | middleinitial | lastname | suffix | phone        | datestamp  | timestamp |
++-----------+---------------+----------+--------+--------------+------------+-----------+
+| Desmond   | K             | Smith    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:19:53  |
+| Lisa      | V             | Cooper   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:23:04  |
++-----------+---------------+----------+--------+--------------+------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Gill', 'S', 'Fisher', 'Mr', '404-XXX-XXXX', CURDATE(), NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Maria', 'E', 'Carter', 'Ms', '404-XXX-XXXX', CURDATE(), NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Norbert', 'L', 'Roger', 'Mr', '404-XXX-XXXX', CURDATE(), NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO students (firstname, middleinitial, lastname, suffix, phone, datestamp, timestamp) Values ('Phil', 'H', 'Jones', 'Mr', '404-XXX-XXXX', CURDATE(), NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM students
+    -> ;
++-----------+---------------+----------+--------+--------------+------------+-----------+
+| firstname | middleinitial | lastname | suffix | phone        | datestamp  | timestamp |
++-----------+---------------+----------+--------+--------------+------------+-----------+
+| Desmond   | K             | Smith    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:19:53  |
+| Lisa      | V             | Cooper   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:23:04  |
+| Gill      | S             | Fisher   | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:33:13  |
+| Maria     | E             | Carter   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:38:35  |
+| Norbert   | L             | Roger    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:39:41  |
+| Phil      | H             | Jones    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:40:57  |
++-----------+---------------+----------+--------+--------------+------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> alter table students add column location VARCHAR(20);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM students;
++-----------+---------------+----------+--------+--------------+------------+-----------+----------+
+| firstname | middleinitial | lastname | suffix | phone        | datestamp  | timestamp | location |
++-----------+---------------+----------+--------+--------------+------------+-----------+----------+
+| Desmond   | K             | Smith    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:19:53  | NULL     |
+| Lisa      | V             | Cooper   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:23:04  | NULL     |
+| Gill      | S             | Fisher   | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:33:13  | NULL     |
+| Maria     | E             | Carter   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:38:35  | NULL     |
+| Norbert   | L             | Roger    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:39:41  | NULL     |
+| Phil      | H             | Jones    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:40:57  | NULL     |
++-----------+---------------+----------+--------+--------------+------------+-----------+----------+
+6 rows in set (0.01 sec)
+
+mysql> UPDATE students SET location= 'Atlanta' where firstname= 'Desmond';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM students
+    -> ;
++-----------+---------------+----------+--------+--------------+------------+-----------+----------+
+| firstname | middleinitial | lastname | suffix | phone        | datestamp  | timestamp | location |
++-----------+---------------+----------+--------+--------------+------------+-----------+----------+
+| Desmond   | K             | Smith    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:19:53  | Atlanta  |
+| Lisa      | V             | Cooper   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:23:04  | NULL     |
+| Gill      | S             | Fisher   | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:33:13  | NULL     |
+| Maria     | E             | Carter   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:38:35  | NULL     |
+| Norbert   | L             | Roger    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:39:41  | NULL     |
+| Phil      | H             | Jones    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:40:57  | NULL     |
++-----------+---------------+----------+--------+--------------+------------+-----------+----------+
+6 rows in set (0.00 sec)
+
+mysql> UPDATE students SET location= 'Orlando' where firstname= 'Lisa';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE students SET location= 'New York' where firstname= 'Gill';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE students SET location= 'Las Vesgas' where firstname= 'Maria';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE students SET location= 'Austin' where firstname= 'Norbert';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE students SET location= 'Augusta' where firstname= 'Phil';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM students
+    -> ;
++-----------+---------------+----------+--------+--------------+------------+-----------+------------+
+| firstname | middleinitial | lastname | suffix | phone        | datestamp  | timestamp | location   |
++-----------+---------------+----------+--------+--------------+------------+-----------+------------+
+| Desmond   | K             | Smith    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:19:53  | Atlanta    |
+| Lisa      | V             | Cooper   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:23:04  | Orlando    |
+| Gill      | S             | Fisher   | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:33:13  | New York   |
+| Maria     | E             | Carter   | Ms     | 404-XXX-XXXX | 2019-07-15 | 14:38:35  | Las Vesgas |
+| Norbert   | L             | Roger    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:39:41  | Austin     |
+| Phil      | H             | Jones    | Mr     | 404-XXX-XXXX | 2019-07-15 | 14:40:57  | Augusta    |
++-----------+---------------+----------+--------+--------------+------------+-----------+------------+
+6 rows in set (0.00 sec)
+
+mysql> alter table students drop column suffix;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM students
+    -> ;
++-----------+---------------+----------+--------------+------------+-----------+------------+
+| firstname | middleinitial | lastname | phone        | datestamp  | timestamp | location   |
++-----------+---------------+----------+--------------+------------+-----------+------------+
+| Desmond   | K             | Smith    | 404-XXX-XXXX | 2019-07-15 | 14:19:53  | Atlanta    |
+| Lisa      | V             | Cooper   | 404-XXX-XXXX | 2019-07-15 | 14:23:04  | Orlando    |
+| Gill      | S             | Fisher   | 404-XXX-XXXX | 2019-07-15 | 14:33:13  | New York   |
+| Maria     | E             | Carter   | 404-XXX-XXXX | 2019-07-15 | 14:38:35  | Las Vesgas |
+| Norbert   | L             | Roger    | 404-XXX-XXXX | 2019-07-15 | 14:39:41  | Austin     |
+| Phil      | H             | Jones    | 404-XXX-XXXX | 2019-07-15 | 14:40:57  | Augusta    |
++-----------+---------------+----------+--------------+------------+-----------+------------+
+6 rows in set (0.00 sec)
+
