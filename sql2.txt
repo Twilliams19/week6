@@ -1,0 +1,332 @@
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ npm init -y
+Wrote to /Users/taylorwilliams/Desktop/TaylorSQL/package.json:
+
+{
+  "name": "TaylorSQL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sql2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twilliams19/week6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twilliams19/week6/issues"
+  },
+  "homepage": "https://github.com/Twilliams19/week6#readme"
+}
+
+
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ npm install mysql
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN TaylorSQL@1.0.0 No description
+
++ mysql@2.17.1
+added 11 packages from 15 contributors and audited 13 packages in 1.025s
+found 0 vulnerabilities
+
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'Root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at Connection.connect (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:119:18)
+    at Object.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:9:5)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:829:12)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'Root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at Connection.connect (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:119:18)
+    at Object.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:9:5)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:829:12)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+Database created
+^C
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-bird VARCHAR(100))' at line 1
+    at Query.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:201:25)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:32:7)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Handshake._callback (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:491:16)
+    at Handshake.Sequence.end (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ npm init -y
+Wrote to /Users/taylorwilliams/Desktop/TaylorSQL/package.json:
+
+{
+  "name": "TaylorSQL",
+  "version": "1.0.0",
+  "main": "sql2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twilliams19/week6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twilliams19/week6/issues"
+  },
+  "homepage": "https://github.com/Twilliams19/week6#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
+
+
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ npm install mysql
+npm WARN TaylorSQL@1.0.0 No description
+
++ mysql@2.17.1
+updated 1 package and audited 13 packages in 0.962s
+found 0 vulnerabilities
+
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-bird VARCHAR(100))' at line 1
+    at Query.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:201:25)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:32:7)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Handshake._callback (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:491:16)
+    at Handshake.Sequence.end (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-bird VARCHAR(100))' at line 1
+    at Query.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:201:25)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:32:7)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Handshake._callback (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:491:16)
+    at Handshake.Sequence.end (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+Table created
+^C
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ npm init -y
+Wrote to /Users/taylorwilliams/Desktop/TaylorSQL/package.json:
+
+{
+  "name": "TaylorSQL",
+  "version": "1.0.0",
+  "main": "sql2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twilliams19/week6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twilliams19/week6/issues"
+  },
+  "homepage": "https://github.com/Twilliams19/week6#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
+
+
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ npm install mysql
+npm WARN TaylorSQL@1.0.0 No description
+
++ mysql@2.17.1
+updated 1 package and audited 13 packages in 1.414s
+found 0 vulnerabilities
+
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_TABLE_EXISTS_ERROR: Table 'infomation' already exists
+    at Query.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:201:25)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:32:7)
+    at Handshake.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Handshake._callback (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:491:16)
+    at Handshake.Sequence.end (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_BAD_DB_ERROR: Unknown database 'mydb'
+    at Handshake.Sequence._packetToError (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:525:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    --------------------
+    at Protocol._enqueue (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at Connection.connect (/Users/taylorwilliams/Desktop/TaylorSQL/node_modules/mysql/lib/Connection.js:119:18)
+    at Object.<anonymous> (/Users/taylorwilliams/Desktop/TaylorSQL/sql2.js:48:5)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:829:12)
+Taylors-MacBook-Air:TaylorSQL taylorwilliams$ node sql2.js
+Connected!
+1 record inserted
+SELECT * FROM states;
+mysql> using states;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'using states' at line 1
+mysql> USE states;
+Database changed
+mysql> show databases
+    -> 
+    -> show database
+    -> USE states;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show database
+USE states' at line 3
+mysql> USE states
+Database changed
+mysql> SELECT *;
+ERROR 1096 (HY000): No tables used
+mysql> SELECT * FROM infomation
+    -> ;
++------------+------------------+
+| captital   | state_bird       |
++------------+------------------+
+| Sacramento | California_quail |
++------------+------------------+
+1 row in set (0.03 sec)
